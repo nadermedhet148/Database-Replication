@@ -86,7 +86,6 @@ class PostDb:
 
 
 postDb = PostDb()
-jobs = []
 
 postDb.insertPost('name')
 postDb.readPost('name')
