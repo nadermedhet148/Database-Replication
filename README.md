@@ -12,3 +12,14 @@ We know in Leader follower model, client can able to write only by leader this i
 To overcome this issue multi leader model was created which allows clients to send write requests to multiple leaders and is also called as multi leader replication. In this model, leaders will be simultaneously acts as a follower to other leaders
 
 ![MultiLeaderReplication](docs/1578341501794.png)
+
+## Leader less replication (Dynamo-style) :
+________________________________
+
+Some data storage systems take a different approach, abandoning the concept of a leader and allowing any replica to directly accept writes from clients. Amazon used this leaderless architecture for its in-house Dynamo system. That’s why leaderless replication is often called Dynamo-style.
+In some leaderless implementations:
+---------------
+the client directly sends its writes to several replicas,
+while in others, a coordinator node  sends the writes to the replicas on behalf of the clients. Unlike a leader-based replication, the coordinator does not enforce a particular ordering of writes. And this difference in design has profound consequences for the way the leaderless architecture is used.
+
+![MultiLeaderReplication](docs/image-2.png)

@@ -75,7 +75,7 @@ class PostDb:
                                                 id=mycursor._insert_id,  name=name, dataCenter=dataCenters[dataCenterIndex]))
 
     def readPost(self, name):
-        dataCenter = random.choice(dataCenters);
+        dataCenter = random.choice(dataCenters)
         mycursor = dataCenter.get('connection').cursor()
 
         sql = "Select * from post where name = %s"
